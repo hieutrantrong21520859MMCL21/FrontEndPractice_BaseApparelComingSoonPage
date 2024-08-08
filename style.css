@@ -1,0 +1,142 @@
+:root {    
+    --color_primary_desaturated_red: hsl(0, 36%, 70%);
+    --color_primary_soft_red: hsl(0, 93%, 68%);
+    --color_neutral_red: hsl(0, 6%, 24%);
+    --color_gradient_light: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --color_gradient_blurred: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: var(--color_gradient_light);
+    margin: 0;
+}
+
+header .logo{
+    width: 100px;
+    margin: 30px 0px 30px 25px;
+}
+
+header .mobile-hero {
+    width: 100%;
+}
+
+section {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+section p.title {
+    text-transform: uppercase;
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+}
+
+section p.main {
+    font-size: 16px;
+    color: var(--color_primary_desaturated_red);
+}
+
+form {
+    padding: 10px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+form input {
+    width: 100%;
+    padding: 15px 25px 15px;
+    border-radius: 30px;
+    border: 1px solid var(--color_primary_desaturated_red);
+
+    font-size: 16px;
+}
+
+form #email::placeholder {
+    color: var(--color_primary_desaturated_red);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+
+form.invalid::before {
+    content: 'Please provide a valid email';
+    color: red;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+
+    position: absolute;
+    top: 70px;
+    left: 35px;
+}
+
+form.invalid::after {
+    content:'';
+    width: 24px;
+    height: 24px;
+    background-image: url(./images/icon-error.svg);
+
+    position: absolute;
+    top: 22px;
+    right: 85px;
+}
+
+form #submit {
+    width: 70px;
+    height: 50px;
+    background-image: url(/images/icon-arrow.svg), var(--color_gradient_blurred);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    border: 0;
+    padding-left: 33px;
+    padding-right: 30px;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    box-shadow: 0px 5px 20px hsl(0, 80%, 86%);
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width: 1000px) {
+    .desktop-hero {
+        width: 512px;
+        height: 100vh;
+        float: right;
+    }
+
+    .col-left {
+        width: calc(100% - 512px - 200px);
+        margin-left: 100px;
+
+        clear: right;
+        float: left;
+    }
+
+    header .mobile-hero {
+        display: none;
+    }
+
+    header .logo {
+        width: 150px;
+    }
+
+    section {
+        text-align: start;
+    }
+
+    .hidden {
+        display: block;
+    }
+}
