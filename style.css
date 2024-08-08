@@ -63,13 +63,14 @@ form #email::placeholder {
     color: var(--color_primary_desaturated_red);
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
+    opacity: 0.5;
 }
 
 form.invalid::before {
     content: 'Please provide a valid email';
     color: red;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 
     position: absolute;
     top: 70px;
@@ -103,6 +104,13 @@ form #submit {
     right: 10px;
 
     box-shadow: 0px 5px 20px hsl(0, 80%, 86%);
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form #submit:hover {
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .hidden {
@@ -110,6 +118,12 @@ form #submit {
 }
 
 @media screen and (min-width: 1000px) {
+    
+    body {
+        background-image: url(./images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+    }
+
     .desktop-hero {
         width: 512px;
         height: 100vh;
